@@ -26,9 +26,8 @@ module.exports = (nick) ->
                           { command: 'PRIVMSG', params: [state.room, msg] }
 
         msgIn       = ircIn.filter (msg) -> msg.command == 'PRIVMSG'
-        roomMsg     = msgIn.zip state.sampledBy(msgIn), (msg, state) -> [state.room, msg]
-                          .filter ([room, msg]) -> room == msg.params[0]
-                          .map    ([room, msg]) -> msg
+        msgInRoom   = state.sampledBy msgIn, (state, msg) -> irc.equal msg.params[0], state.room
+        roomMsg     = msgIn.filter msgInRoom.toProperty()
 
         displayMsg  = roomMsg.merge(msgCmd).map (msg) ->
                           color.yellow(msg.params[0]) + ' ' +
