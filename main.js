@@ -1,7 +1,7 @@
-var fs    = require('fs'),
-    net   = require('net'),
-    irc   = require('./lib/irc'),
-    rx    = require('./lib/rx');
+var fs  = require('fs'),
+    net = require('net'),
+    irc = require('./lib/irc'),
+    rx  = require('./lib/rx');
 
 var host   = 'chat.freenode.net',
     port   = 8000,
