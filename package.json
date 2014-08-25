@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "baconjs":        "~0.7.0",
+    "cli-color":      "~0.3.0",
+    "coffee-script":  "~1.7.0",
+    "split":          "~0.3.0"
+  }
+}
