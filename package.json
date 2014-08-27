@@ -3,6 +3,7 @@
     "baconjs":        "~0.7.0",
     "cli-color":      "~0.3.0",
     "coffee-script":  "~1.7.0",
+    "request":        "~2.40.0",
     "split":          "~0.3.0"
   }
 }
