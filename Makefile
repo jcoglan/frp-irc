@@ -1,8 +1,11 @@
 SHELL := /bin/bash
 PATH  := node_modules/.bin:$(PATH)
 
-run: compile
+coffee   = $(wildcard *.coffee)
+compiled = $(coffee:%.coffee=%.js)
+
+run: $(compiled)
 	node main.js
 
-compile: *.coffee
-	coffee -c $^
+%.js: %.coffee
+	coffee -co $(dir $@) $^
